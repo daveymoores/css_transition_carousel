@@ -26,30 +26,85 @@
 </head>
 <body>
 
-	<div class="row">
-		<div class="twelve columns">
-			<h2>Tui carousel</h2>
-			<hr />
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="twelve columns deep_grey-banner">
-			<div class="white_header">
-				<ul class="nav">
-					<li><h1><img src="images/tui_logo.png"></h1></li>
-					<li>About us</li>
-					<li>Our work</li>
-					<li>Jobs</li>
-					<li>Contact us</li>
-				</ul>
-			</div>
-			<div id="featured">
-			  <img src="images/800x450.gif" alt="placeholder" />
-			  <img src="images/800x450.gif" alt="placeholder" />
-			  <img src="images/800x450.gif" alt="placeholder" />
+	    <div class="row">
+			<div class="twelve columns">
+				<h2>Tui carousel</h2>
+				<hr />
 			</div>
 		</div>
+		</row>
+		
+		<div id="carousel_wrapper">
+			
+			<div id="carousel_banner">
+				<!--top menu-->
+				<div class="white_header">
+					<ul class="nav">
+						<li class="logo"><h1><img src="images/tui_logo.png"></h1></li>
+						<li>About us</li>
+						<li>Our work</li>
+						<li>Jobs</li>
+						<li>Contact us</li>
+						<li class="pusharight">47 Greek Street, London W1D 4EE tel 020 7734 7757</li>
+					</ul>
+				</div>
+				
+				<div id="carousel">
+					<div class="slide_1 slide-frombottom">
+						<div class="an_image-1 img_cont">
+							<img src="images/2a.png" alt="image">
+						</div>
+						<div class="an_image-2 img_cont">
+							<img src="images/2b.png" alt="image">
+						</div>
+						<div class="an_image-3 img_cont">
+							<img src="images/2c.png" alt="image">
+						</div>
+						
+						
+						<div class="caption moveIn">
+							<div class="caption_contents">
+								<h2>How to spend it</h2>
+								<h4>A hit with audiences and advertisers</h4>
+								<p>Client: <strong>Financial Times</strong></p>
+							</div>
+						</div>
+					</div>
+					<div class="slide_2"></div>
+					<div class="slide_3"></div>
+					
+					
+					<ul id="nav">
+						<li class="left" id="left"><span></span></li>
+						<li class="right" id="right"><span></span></li>
+					</ul>
+				</div>
+				
+				
+				
+			</div>
+			
+		</div>
+	
+		<!-- <div class="row">
+					<div class="twelve columns deep_grey-banner">
+						<div class="white_header">
+							<ul class="nav">
+								<li><h1><img src="images/tui_logo.png"></h1></li>
+								<li>About us</li>
+								<li>Our work</li>
+								<li>Jobs</li>
+								<li>Contact us</li>
+							</ul>
+						</div>
+						<div id="featured">
+						  <img src="images/800x450.gif" alt="placeholder" />
+						  <img src="images/800x450.gif" alt="placeholder" />
+						  <img src="images/800x450.gif" alt="placeholder" />
+						</div>
+					</div> -->
+					
+					<div class="footer"></div>
 	</div>
 	
 	<!-- Included JS Files (Uncompressed) -->
@@ -87,6 +142,29 @@
      $(window).load(function() {
          $('#featured').orbit();
      });
+	 
+	 
+	 $(document).ready(function(){
+	 	
+		 $('#left').on('click', function(){
+			
+			 if($('#carousel').find('.slide_1').hasClass('slide-frombottom')) {
+			 	$('#carousel').find('.slide_1').removeClass('slide-frombottom').addClass('slide-fromtop');
+				$('#carousel').find('.caption').removeClass('moveIn').addClass('moveOut');
+			 }
+			 	
+		 });
+		 
+		 $('#right').on('click', function(){
+			
+			 if($('#carousel').find('.slide_1').hasClass('slide-fromtop')) {
+			 	$('#carousel').find('.slide_1').removeClass('slide-fromtop').addClass('slide-frombottom');
+				$('#carousel').find('.caption').removeClass('moveOut').addClass('moveIn');
+			 }
+			
+		 });
+		
+	 });
   </script>
 </body>
 </html>
