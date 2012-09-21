@@ -150,7 +150,7 @@ ul#nav {
 }
 
 /**slide rules**/
-
+/*slide coming in bottom to top and vice versa*/
 #carousel .slide-frombottom .an_image-1{
    -webkit-animation: fromBottomAnim1 0.3s ease-out 0.6s both;
 }
@@ -170,41 +170,6 @@ ul#nav {
 #carousel .slide-fromtop .an_image-3{
    -webkit-animation: fromTopAnim3 0.3s ease-in 0.2s both;
 }
-
-#carousel .moveIn {
-   -webkit-animation: AnimCapIn 0.4s ease-out 1s both;
-}
-
-#carousel .moveOut {
-   -webkit-animation: AnimCapOut 0.4s ease-In 0.2s both;
-}
-
-
-#carousel .moveIn .caption_contents {
-	opacity: 1;
-	-webkit-transition: opacity 2.5s linear;
-}
-
-#carousel .moveOut .caption_contents {
-	opacity: 0;
-	-webkit-transition: opacity 0.4s linear;
-}
-
-
-
-@-webkit-keyframes AnimCapIn{
-    0%{ bottom: -20%; opacity: 1; }
-    100%{ bottom: 0%; opacity: 1; }
-}
-
-@-webkit-keyframes AnimCapOut{
-    0%{ bottom: 0%; opacity: 1; }
-    100%{ bottom: -50%; opacity: 1; }
-}
-
-
-
-
 
 @-webkit-keyframes fromTopAnim1{
     0%{ bottom: 0%; opacity: 1; }
@@ -237,9 +202,34 @@ ul#nav {
     100%{ bottom: 0%; opacity: 1; }
 }
 
+/**animation for the caption**/
+#carousel .moveIn {
+   -webkit-animation: AnimCapIn 0.4s ease-out 1s both;
+}
 
+#carousel .moveOut {
+   -webkit-animation: AnimCapOut 0.4s ease-In 0.2s both;
+}
 
+#carousel .moveIn .caption_contents {
+	opacity: 1;
+	-webkit-transition: opacity 2.5s linear;
+}
 
+#carousel .moveOut .caption_contents {
+	opacity: 0;
+	-webkit-transition: opacity 0.4s linear;
+}
+
+@-webkit-keyframes AnimCapIn{
+    0%{ bottom: -20%; opacity: 1; }
+    100%{ bottom: 0%; opacity: 1; }
+}
+
+@-webkit-keyframes AnimCapOut{
+    0%{ bottom: 0%; opacity: 1; }
+    100%{ bottom: -50%; opacity: 1; }
+}
 
 
 

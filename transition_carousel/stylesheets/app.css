@@ -5207,6 +5207,7 @@ ul#nav li:hover span {
 }
 
 /**slide rules**/
+/*slide coming in bottom to top and vice versa*/
 /* line 154, ../sass/styles.scss */
 #carousel .slide-frombottom .an_image-1 {
   -webkit-animation: fromBottomAnim1 0.3s ease-out 0.6s both;
@@ -5237,32 +5238,66 @@ ul#nav li:hover span {
   -webkit-animation: fromTopAnim3 0.3s ease-in 0.2s both;
 }
 
-/* line 174, ../sass/styles.scss */
-#carousel .moveIn {
-  -webkit-animation: AnimCapIn 0.4s ease-out 1s both;
+@-webkit-keyframes fromTopAnim1 {
+  /* line 175, ../sass/styles.scss */
+  0% {
+    bottom: 0%;
+    opacity: 1;
+  }
+
+  /* line 176, ../sass/styles.scss */
+  100% {
+    bottom: -100%;
+    opacity: 1;
+  }
 }
 
-/* line 178, ../sass/styles.scss */
-#carousel .moveOut {
-  -webkit-animation: AnimCapOut 0.4s ease-In 0.2s both;
+@-webkit-keyframes fromTopAnim2 {
+  /* line 180, ../sass/styles.scss */
+  0% {
+    bottom: 0%;
+    opacity: 1;
+  }
+
+  /* line 181, ../sass/styles.scss */
+  100% {
+    bottom: -100%;
+    opacity: 1;
+  }
 }
 
-/* line 183, ../sass/styles.scss */
-#carousel .moveIn .caption_contents {
-  opacity: 1;
-  -webkit-transition: opacity 2.5s linear;
+@-webkit-keyframes fromTopAnim3 {
+  /* line 185, ../sass/styles.scss */
+  0% {
+    bottom: 0%;
+    opacity: 1;
+  }
+
+  /* line 186, ../sass/styles.scss */
+  100% {
+    bottom: -100%;
+    opacity: 1;
+  }
 }
 
-/* line 188, ../sass/styles.scss */
-#carousel .moveOut .caption_contents {
-  opacity: 0;
-  -webkit-transition: opacity 0.4s linear;
+@-webkit-keyframes fromBottomAnim1 {
+  /* line 191, ../sass/styles.scss */
+  0% {
+    bottom: -100%;
+    opacity: 1;
+  }
+
+  /* line 192, ../sass/styles.scss */
+  100% {
+    bottom: 0%;
+    opacity: 1;
+  }
 }
 
-@-webkit-keyframes AnimCapIn {
+@-webkit-keyframes fromBottomAnim2 {
   /* line 196, ../sass/styles.scss */
   0% {
-    bottom: -20%;
+    bottom: -100%;
     opacity: 1;
   }
 
@@ -5273,100 +5308,67 @@ ul#nav li:hover span {
   }
 }
 
-@-webkit-keyframes AnimCapOut {
+@-webkit-keyframes fromBottomAnim3 {
   /* line 201, ../sass/styles.scss */
   0% {
-    bottom: 0%;
+    bottom: -100%;
     opacity: 1;
   }
 
   /* line 202, ../sass/styles.scss */
   100% {
-    bottom: -50%;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fromTopAnim1 {
-  /* line 210, ../sass/styles.scss */
-  0% {
     bottom: 0%;
     opacity: 1;
   }
-
-  /* line 211, ../sass/styles.scss */
-  100% {
-    bottom: -100%;
-    opacity: 1;
-  }
 }
 
-@-webkit-keyframes fromTopAnim2 {
-  /* line 215, ../sass/styles.scss */
+/**animation for the caption**/
+/* line 206, ../sass/styles.scss */
+#carousel .moveIn {
+  -webkit-animation: AnimCapIn 0.4s ease-out 1s both;
+}
+
+/* line 210, ../sass/styles.scss */
+#carousel .moveOut {
+  -webkit-animation: AnimCapOut 0.4s ease-In 0.2s both;
+}
+
+/* line 214, ../sass/styles.scss */
+#carousel .moveIn .caption_contents {
+  opacity: 1;
+  -webkit-transition: opacity 2.5s linear;
+}
+
+/* line 219, ../sass/styles.scss */
+#carousel .moveOut .caption_contents {
+  opacity: 0;
+  -webkit-transition: opacity 0.4s linear;
+}
+
+@-webkit-keyframes AnimCapIn {
+  /* line 225, ../sass/styles.scss */
   0% {
-    bottom: 0%;
+    bottom: -20%;
     opacity: 1;
   }
 
-  /* line 216, ../sass/styles.scss */
-  100% {
-    bottom: -100%;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fromTopAnim3 {
-  /* line 220, ../sass/styles.scss */
-  0% {
-    bottom: 0%;
-    opacity: 1;
-  }
-
-  /* line 221, ../sass/styles.scss */
-  100% {
-    bottom: -100%;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fromBottomAnim1 {
   /* line 226, ../sass/styles.scss */
-  0% {
-    bottom: -100%;
-    opacity: 1;
-  }
-
-  /* line 227, ../sass/styles.scss */
   100% {
     bottom: 0%;
     opacity: 1;
   }
 }
 
-@-webkit-keyframes fromBottomAnim2 {
+@-webkit-keyframes AnimCapOut {
+  /* line 230, ../sass/styles.scss */
+  0% {
+    bottom: 0%;
+    opacity: 1;
+  }
+
   /* line 231, ../sass/styles.scss */
-  0% {
-    bottom: -100%;
-    opacity: 1;
-  }
-
-  /* line 232, ../sass/styles.scss */
   100% {
-    bottom: 0%;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fromBottomAnim3 {
-  /* line 236, ../sass/styles.scss */
-  0% {
-    bottom: -100%;
-    opacity: 1;
-  }
-
-  /* line 237, ../sass/styles.scss */
-  100% {
-    bottom: 0%;
+    bottom: -50%;
     opacity: 1;
   }
 }
