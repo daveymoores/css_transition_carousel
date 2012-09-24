@@ -104,7 +104,8 @@ ul#nav {
 	.img_cont {
 		float: left;
 		position: absolute;
-		bottom: -395px;
+		bottom: 0px;
+		width: 365px;
 	}
 	.an_image-1 {
 		left: 50px;
@@ -149,16 +150,42 @@ ul#nav {
 	background: url('../images/footer-grad.png') top left repeat-x;
 }
 
+
+/**pagination**/
+#pagination {
+	margin: 0px auto;
+	width: 100px;
+	display: block;
+	padding-top: 20px;
+	
+	li {
+		list-style: none;
+		height: 12px;
+		width: 12px;
+		border-radius: 6px;
+		float: left;
+		background-color: #333;
+		//box-shadow: inset 0px 1px 2px #000;
+		margin-right: 5px;
+		
+		&.active {
+			background-color: #fff;
+			box-shadow: inset 0px 1px 2px #000;
+		}
+	}
+}
+/**end pagination**/
+
 /**slide rules**/
 /*slide coming in bottom to top and vice versa*/
 #carousel .slide-frombottom .an_image-1{
-   -webkit-animation: fromBottomAnim1 0.3s ease-out 0.6s both;
+   -webkit-animation: fromRightAnim1 0.3s ease-out 0.6s both;
 }
 #carousel .slide-frombottom .an_image-2{
-   -webkit-animation: fromBottomAnim2 0.4s ease-out 0.7s both;
+   -webkit-animation: fromRightAnim2 0.4s ease-out 0.7s both;
 }
 #carousel .slide-frombottom .an_image-3{
-   -webkit-animation: fromBottomAnim3 0.5s ease-out 0.8s both;
+   -webkit-animation: fromRightAnim3 0.5s ease-out 0.8s both;
 }
 
 #carousel .slide-fromtop .an_image-1{
@@ -171,6 +198,9 @@ ul#nav {
    -webkit-animation: fromTopAnim3 0.3s ease-in 0.2s both;
 }
 
+
+
+/**from top to bottom animation**/
 @-webkit-keyframes fromTopAnim1{
     0%{ bottom: 0%; opacity: 1; }
     100%{ bottom: -100%; opacity: 1; }
@@ -187,20 +217,24 @@ ul#nav {
 }
 
 
-@-webkit-keyframes fromBottomAnim1{
-    0%{ bottom: -100%; opacity: 1; }
-    100%{ bottom: 0%; opacity: 1; }
+
+/**from right to left animation**/
+@-webkit-keyframes fromRightAnim1{
+    0%{ left: 15%; opacity: 0; }
+    100%{ left: 5%; opacity: 1; }
 }
 
-@-webkit-keyframes fromBottomAnim2{
-    0%{ bottom: -100%; opacity: 1; }
-    100%{ bottom: 0%; opacity: 1; }
+@-webkit-keyframes fromRightAnim2{
+    0%{ left: 40%; opacity: 0; }
+    100%{ left: 30%; opacity: 1; }
 }
 
-@-webkit-keyframes fromBottomAnim3{
-    0%{ bottom: -100%; opacity: 1; }
-    100%{ bottom: 0%; opacity: 1; }
+@-webkit-keyframes fromRightAnim3{
+    0%{ left: 70%; opacity: 0; }
+    100%{ left: 58.5%; opacity: 1; }
 }
+
+
 
 /**animation for the caption**/
 #carousel .moveIn {

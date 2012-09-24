@@ -117,23 +117,24 @@ ul#nav li:hover span {
 #carousel .img_cont {
   float: left;
   position: absolute;
-  bottom: -395px;
+  bottom: 0px;
+  width: 365px;
 }
-/* line 109, ../sass/styles.scss */
+/* line 110, ../sass/styles.scss */
 #carousel .an_image-1 {
   left: 50px;
   margin-top: 40px;
 }
-/* line 113, ../sass/styles.scss */
+/* line 114, ../sass/styles.scss */
 #carousel .an_image-2 {
   left: 300px;
   margin-top: 20px;
 }
-/* line 117, ../sass/styles.scss */
+/* line 118, ../sass/styles.scss */
 #carousel .an_image-3 {
   right: 50px;
 }
-/* line 121, ../sass/styles.scss */
+/* line 122, ../sass/styles.scss */
 #carousel .caption {
   background-color: #ffcc00;
   width: 270px;
@@ -143,70 +144,96 @@ ul#nav li:hover span {
   margin-left: 345px;
   bottom: 0%;
 }
-/* line 129, ../sass/styles.scss */
+/* line 130, ../sass/styles.scss */
 #carousel .caption .caption_contents {
   opacity: 0;
 }
-/* line 132, ../sass/styles.scss */
+/* line 133, ../sass/styles.scss */
 #carousel .caption h2 {
   font-size: 18px;
   font-weight: 300;
   margin: 0px;
 }
-/* line 137, ../sass/styles.scss */
+/* line 138, ../sass/styles.scss */
 #carousel .caption h4 {
   font-size: 14px;
   font-weight: 300;
   margin: 10px 0px;
 }
 
-/* line 146, ../sass/styles.scss */
+/* line 147, ../sass/styles.scss */
 .footer {
   width: 100%;
   height: 150px;
   background: url("../images/footer-grad.png") top left repeat-x;
 }
 
+/**pagination**/
+/* line 155, ../sass/styles.scss */
+#pagination {
+  margin: 0px auto;
+  width: 100px;
+  display: block;
+  padding-top: 20px;
+}
+/* line 161, ../sass/styles.scss */
+#pagination li {
+  list-style: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 6px;
+  float: left;
+  background-color: #333;
+  margin-right: 5px;
+}
+/* line 171, ../sass/styles.scss */
+#pagination li.active {
+  background-color: #fff;
+  box-shadow: inset 0px 1px 2px #000;
+}
+
+/**end pagination**/
 /**slide rules**/
 /*slide coming in bottom to top and vice versa*/
-/* line 154, ../sass/styles.scss */
+/* line 181, ../sass/styles.scss */
 #carousel .slide-frombottom .an_image-1 {
-  -webkit-animation: fromBottomAnim1 0.3s ease-out 0.6s both;
+  -webkit-animation: fromRightAnim1 0.3s ease-out 0.6s both;
 }
 
-/* line 157, ../sass/styles.scss */
+/* line 184, ../sass/styles.scss */
 #carousel .slide-frombottom .an_image-2 {
-  -webkit-animation: fromBottomAnim2 0.4s ease-out 0.7s both;
+  -webkit-animation: fromRightAnim2 0.4s ease-out 0.7s both;
 }
 
-/* line 160, ../sass/styles.scss */
+/* line 187, ../sass/styles.scss */
 #carousel .slide-frombottom .an_image-3 {
-  -webkit-animation: fromBottomAnim3 0.5s ease-out 0.8s both;
+  -webkit-animation: fromRightAnim3 0.5s ease-out 0.8s both;
 }
 
-/* line 164, ../sass/styles.scss */
+/* line 191, ../sass/styles.scss */
 #carousel .slide-fromtop .an_image-1 {
   -webkit-animation: fromTopAnim1 0.5s ease-in 0.2s both;
 }
 
-/* line 167, ../sass/styles.scss */
+/* line 194, ../sass/styles.scss */
 #carousel .slide-fromtop .an_image-2 {
   -webkit-animation: fromTopAnim2 0.4s ease-in 0.2s both;
 }
 
-/* line 170, ../sass/styles.scss */
+/* line 197, ../sass/styles.scss */
 #carousel .slide-fromtop .an_image-3 {
   -webkit-animation: fromTopAnim3 0.3s ease-in 0.2s both;
 }
 
+/**from top to bottom animation**/
 @-webkit-keyframes fromTopAnim1 {
-  /* line 175, ../sass/styles.scss */
+  /* line 205, ../sass/styles.scss */
   0% {
     bottom: 0%;
     opacity: 1;
   }
 
-  /* line 176, ../sass/styles.scss */
+  /* line 206, ../sass/styles.scss */
   100% {
     bottom: -100%;
     opacity: 1;
@@ -214,13 +241,13 @@ ul#nav li:hover span {
 }
 
 @-webkit-keyframes fromTopAnim2 {
-  /* line 180, ../sass/styles.scss */
+  /* line 210, ../sass/styles.scss */
   0% {
     bottom: 0%;
     opacity: 1;
   }
 
-  /* line 181, ../sass/styles.scss */
+  /* line 211, ../sass/styles.scss */
   100% {
     bottom: -100%;
     opacity: 1;
@@ -228,92 +255,93 @@ ul#nav li:hover span {
 }
 
 @-webkit-keyframes fromTopAnim3 {
-  /* line 185, ../sass/styles.scss */
+  /* line 215, ../sass/styles.scss */
   0% {
     bottom: 0%;
     opacity: 1;
   }
 
-  /* line 186, ../sass/styles.scss */
+  /* line 216, ../sass/styles.scss */
   100% {
     bottom: -100%;
     opacity: 1;
   }
 }
 
-@-webkit-keyframes fromBottomAnim1 {
-  /* line 191, ../sass/styles.scss */
+/**from right to left animation**/
+@-webkit-keyframes fromRightAnim1 {
+  /* line 223, ../sass/styles.scss */
   0% {
-    bottom: -100%;
-    opacity: 1;
+    left: 15%;
+    opacity: 0;
   }
 
-  /* line 192, ../sass/styles.scss */
+  /* line 224, ../sass/styles.scss */
   100% {
-    bottom: 0%;
+    left: 5%;
     opacity: 1;
   }
 }
 
-@-webkit-keyframes fromBottomAnim2 {
-  /* line 196, ../sass/styles.scss */
+@-webkit-keyframes fromRightAnim2 {
+  /* line 228, ../sass/styles.scss */
   0% {
-    bottom: -100%;
-    opacity: 1;
+    left: 40%;
+    opacity: 0;
   }
 
-  /* line 197, ../sass/styles.scss */
+  /* line 229, ../sass/styles.scss */
   100% {
-    bottom: 0%;
+    left: 30%;
     opacity: 1;
   }
 }
 
-@-webkit-keyframes fromBottomAnim3 {
-  /* line 201, ../sass/styles.scss */
+@-webkit-keyframes fromRightAnim3 {
+  /* line 233, ../sass/styles.scss */
   0% {
-    bottom: -100%;
-    opacity: 1;
+    left: 70%;
+    opacity: 0;
   }
 
-  /* line 202, ../sass/styles.scss */
+  /* line 234, ../sass/styles.scss */
   100% {
-    bottom: 0%;
+    left: 58.5%;
     opacity: 1;
   }
 }
 
 /**animation for the caption**/
-/* line 206, ../sass/styles.scss */
+/* line 240, ../sass/styles.scss */
 #carousel .moveIn {
   -webkit-animation: AnimCapIn 0.4s ease-out 1s both;
 }
 
-/* line 210, ../sass/styles.scss */
+/* line 244, ../sass/styles.scss */
 #carousel .moveOut {
   -webkit-animation: AnimCapOut 0.4s ease-In 0.2s both;
 }
 
-/* line 214, ../sass/styles.scss */
+/* line 248, ../sass/styles.scss */
 #carousel .moveIn .caption_contents {
   opacity: 1;
   -webkit-transition: opacity 2.5s linear;
 }
 
-/* line 219, ../sass/styles.scss */
+/* line 253, ../sass/styles.scss */
 #carousel .moveOut .caption_contents {
   opacity: 0;
   -webkit-transition: opacity 0.4s linear;
 }
 
 @-webkit-keyframes AnimCapIn {
-  /* line 225, ../sass/styles.scss */
+  /* line 259, ../sass/styles.scss */
   0% {
     bottom: -20%;
     opacity: 1;
   }
 
-  /* line 226, ../sass/styles.scss */
+  /* line 260, ../sass/styles.scss */
   100% {
     bottom: 0%;
     opacity: 1;
@@ -321,13 +349,13 @@ ul#nav li:hover span {
 }
 
 @-webkit-keyframes AnimCapOut {
-  /* line 230, ../sass/styles.scss */
+  /* line 264, ../sass/styles.scss */
   0% {
     bottom: 0%;
     opacity: 1;
   }
 
-  /* line 231, ../sass/styles.scss */
+  /* line 265, ../sass/styles.scss */
   100% {
     bottom: -50%;
     opacity: 1;
