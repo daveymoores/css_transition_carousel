@@ -50,7 +50,7 @@
 				</div>
 				
 				<div id="carousel">
-					<div class="slide_1 slide-frombottom">
+					<div class="slider slide_0 slide-fromright">
 						<div class="an_image-1 img_cont">
 							<img src="images/2a.png" height="358" width="365"  alt="image">
 						</div>
@@ -69,9 +69,50 @@
 								<p>Client: <strong>Financial Times</strong></p>
 							</div>
 						</div>
+					</div>					
+					
+					<div class="slider slide_1 hide">
+						<div class="an_image-1 img_cont">
+							<img src="images/ssA.png"  alt="image">
+						</div>
+						<div class="an_image-2 img_cont">
+							<img src="images/ss01.png" alt="image">
+						</div>
+						
+						<div class="caption">
+							<div class="caption_contents">
+								<h2>How to spend it</h2>
+								<h4>Key looks and speakers</h4>
+								<p>Client: <strong>Financial Times</strong></p>
+							</div>
+						</div>
 					</div>
-					<div class="slide_2"></div>
-					<div class="slide_3"></div>
+					
+					<div class="slider slide_2 hide">
+						
+						<div class="an_image-1 img_cont">
+							<div class="col">
+								<h2>One heading</h2>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+							</div>
+							<div class="col">
+								<h2>Another heading</h2>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+							</div>
+							<div class="col">
+								<h2>...and another</h2>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+							</div>
+						</div>
+						
+						<div class="caption">
+							<div class="caption_contents">
+								<h2>How to spend it</h2>
+								<h4>Some lorem...</h4>
+								<p>Client: <strong>Financial Times</strong></p>
+							</div>
+						</div>
+					</div>
 					
 					
 					<ul id="nav">
@@ -90,13 +131,8 @@
 					
 		<div class="footer">
 						
-			<div id="pagination">
-				
-				<li class="active"></li>
-				<li></li>
-				<li></li>
-				
-			</div>
+			<ul id="pagination">
+			</ul>
 						
 		</div>
 	</div>
@@ -137,24 +173,84 @@
          $('#featured').orbit();
      });
 	 
+	function update(){
+			
+		$('#carousel').find('.slider').each(function(i){
+
+				$('#pagination').append('<li data-pagNum="'+ i +'"><a href="#_"></a></li>');
+				$('#pagination').find('li:first').addClass('active');
+			
+		});
+			
+	}
+	 
 	 
 	 $(document).ready(function(){
 	 	
+		 update();
+
 		 $('#left').on('click', function(){
+			 
+			 var num = $('#pagination').find('.active').attr('data-pagNum'),
+			 	 currentSlide = $('#carousel').find('.slide_' + num),
+				 nextSlide = $('#carousel').find('.slide_' + (parseInt(num) + 1)),
+				 prevSlide = $('#carousel').find('.slide_' + (parseInt(num) - 1));
+			 
+			 console.log('>>>> sliding left');
+
+			 if(num !== '0') {
+			 
+			 	currentSlide.removeClass('slide-fromright').addClass('slide-fromtop');
+				currentSlide.find('.caption').removeClass('moveIn').addClass('moveOut');
+				
+				setTimeout(function(){
+					
+					currentSlide.addClass('hide');
+					
+				 	prevSlide.addClass('slide-fromright').removeClass('slide-fromtop');
+					prevSlide.find('.caption').removeClass('moveOut').addClass('moveIn');
+					
+					$('#pagination').find('.active').removeClass('active').prev().addClass('active');
+					
+				}, 600);
+
+			} else {
+				
+				alert('Go forward before you go back...duh');
+				
+			}
 			
-			 if($('#carousel').find('.slide_1').hasClass('slide-frombottom')) {
-			 	$('#carousel').find('.slide_1').removeClass('slide-frombottom').addClass('slide-fromtop');
-				$('#carousel').find('.caption').removeClass('moveIn').addClass('moveOut');
-			 }
-			 	
 		 });
 		 
 		 $('#right').on('click', function(){
-			
-			 if($('#carousel').find('.slide_1').hasClass('slide-fromtop')) {
-			 	$('#carousel').find('.slide_1').removeClass('slide-fromtop').addClass('slide-frombottom');
-				$('#carousel').find('.caption').removeClass('moveOut').addClass('moveIn');
-			 }
+			 
+			 var num = $('#pagination').find('.active').attr('data-pagNum'),
+			 	 currentSlide = $('#carousel').find('.slide_' + num),
+				 nextSlide = $('#carousel').find('.slide_' + (parseInt(num) + 1)),
+				 prevSlide = $('#carousel').find('.slide_' + (parseInt(num) - 1));
+			 
+			 console.log('>>>> sliding right');
+
+			 if(num !== '2') {
+			 
+			 	currentSlide.removeClass('slide-fromright').addClass('slide-fromtop');
+				currentSlide.find('.caption').removeClass('moveIn').addClass('moveOut');
+				
+				setTimeout(function(){
+					
+				 	nextSlide.addClass('slide-fromright').removeClass('hide').removeClass('slide-fromtop');
+					nextSlide.find('.caption').removeClass('moveOut').addClass('moveIn');
+					
+					$('#pagination').find('.active').removeClass('active').next().addClass('active');
+					
+				}, 600);
+
+			} else {
+				
+				alert('Go backward, this is the end of the carousel');
+				
+			}
+			 
 			
 		 });
 		
